@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About the Founder — GoMentored</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --orange:#F47B20;--orange-deep:#D4620A;--orange-pale:#FEF0E6;--orange-light:#FDE2C8;
+  --white:#FFFFFF;--off-white:#FDFAF7;--text-dark:#1A1208;--text-body:#3D2E1A;--text-muted:#8A7060;--border:#EDE4D8;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-body);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--white);border-bottom:1px solid var(--border);padding:0 5vw;height:70px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;text-decoration:none;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--text-dark);letter-spacing:-0.5px;}
+.logo span{color:var(--orange);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:400;color:var(--text-body);padding:7px 13px;border-radius:7px;transition:color 0.2s,background 0.2s;}
+.nav-links a:hover{color:var(--orange);background:var(--orange-pale);}
+.nav-links a.active{color:var(--orange);background:var(--orange-pale);}
+.btn-nav{background:var(--orange)!important;color:white!important;font-weight:600!important;padding:9px 20px!important;border-radius:9px!important;}
+.btn-nav:hover{background:var(--orange-deep)!important;}
+
+/* HERO */
+.hero{padding:60px 5vw 30px;background:var(--white);position:relative;overflow:hidden;}
+.hero-inner{max-width:1100px;margin:0 auto;}
+.hero-bg-circle{position:absolute;border-radius:50%;background:var(--orange);opacity:0.05;pointer-events:none;}
+.hbc1{width:500px;height:500px;top:-200px;right:-150px;}
+.hbc2{width:280px;height:280px;bottom:-100px;left:-60px;}
+.hero-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);text-decoration:none;margin-bottom:22px;font-weight:500;transition:color 0.2s;}
+.hero-back:hover{color:var(--orange);}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);background:var(--orange-pale);padding:6px 16px;border-radius:20px;margin-bottom:22px;}
+.eyebrow-dot{width:5px;height:5px;background:var(--orange);border-radius:50%;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);font-weight:700;color:var(--text-dark);line-height:1.05;letter-spacing:-1.2px;margin-bottom:14px;}
+.hero h1 em{font-style:italic;color:var(--orange);font-weight:400;}
+.hero-tagline{font-size:17px;color:var(--text-muted);max-width:620px;line-height:1.65;}
+
+/* FOUNDER SECTION */
+.founder-section{padding:50px 5vw 80px;}
+.founder-inner{max-width:1100px;margin:0 auto;}
+.founder-grid{display:grid;grid-template-columns:380px 1fr;gap:60px;align-items:start;}
+
+/* PHOTO COLUMN */
+.founder-photo-col{position:sticky;top:90px;}
+.founder-photo-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--border);background:var(--off-white);aspect-ratio:4/5;}
+.founder-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.founder-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--orange-pale) 0%,var(--orange-light) 100%);}
+.founder-photo-placeholder span{font-family:'Playfair Display',serif;font-size:120px;font-weight:700;color:var(--orange);letter-spacing:-3px;}
+.founder-name-tag{position:absolute;bottom:20px;left:20px;right:20px;background:var(--orange);color:white;border-radius:10px;padding:14px 18px;}
+.fnt-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.2;letter-spacing:-0.3px;}
+.fnt-role{font-size:12px;opacity:0.9;margin-top:3px;letter-spacing:0.4px;}
+.founder-meta{margin-top:20px;background:var(--off-white);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:12px;padding:18px 20px;}
+.founder-meta-label{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:8px;}
+.founder-meta-list{list-style:none;}
+.founder-meta-list li{font-size:13px;color:var(--text-body);padding:4px 0;line-height:1.5;}
+.founder-meta-list strong{color:var(--text-dark);font-weight:600;}
+
+/* TEXT COLUMN */
+.founder-text-col{padding-top:6px;}
+.founder-eyebrow{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:10px;}
+.founder-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.4vw,42px);color:var(--text-dark);font-weight:700;line-height:1.15;letter-spacing:-0.8px;margin-bottom:28px;}
+.founder-title em{font-style:italic;color:var(--orange);font-weight:400;}
+
+.founder-lead{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;font-style:italic;color:var(--text-dark);line-height:1.4;margin-bottom:24px;letter-spacing:-0.4px;}
+
+.founder-text-col p{font-size:15px;color:var(--text-body);line-height:1.85;margin-bottom:18px;font-weight:300;}
+.founder-text-col p strong{color:var(--text-dark);font-weight:600;}
+.founder-text-col p em{font-style:italic;color:var(--orange-deep);}
+
+.founder-pullquote{background:var(--orange-pale);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;padding:24px 28px;margin:32px 0;}
+.founder-pullquote p{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;color:var(--text-dark);line-height:1.45;margin:0;font-weight:700;letter-spacing:-0.3px;}
+
+.founder-highlight{font-size:17px!important;font-weight:500!important;color:var(--text-dark)!important;}
+
+.founder-vision{background:var(--text-dark);border-radius:14px;padding:32px;margin-top:40px;color:white;}
+.founder-vision-label{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:10px;}
+.founder-vision h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:white;line-height:1.3;margin-bottom:12px;letter-spacing:-0.5px;}
+.founder-vision h3 em{font-style:italic;color:var(--orange);font-weight:400;}
+.founder-vision p{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:0;font-weight:300;}
+
+.founder-signature{margin-top:36px;padding-top:24px;border-top:1px solid var(--border);}
+.founder-signature .sig-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);letter-spacing:-0.4px;}
+.founder-signature .sig-role{font-size:13px;color:var(--text-muted);margin-top:4px;letter-spacing:0.3px;}
+
+/* CTA */
+.founder-cta{background:var(--off-white);padding:60px 5vw;border-top:1px solid var(--border);}
+.founder-cta-inner{max-width:760px;margin:0 auto;text-align:center;}
+.founder-cta h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--text-dark);line-height:1.15;letter-spacing:-0.8px;margin-bottom:14px;}
+.founder-cta h2 em{font-style:italic;color:var(--orange);font-weight:400;}
+.founder-cta p{font-size:15px;color:var(--text-muted);max-width:520px;margin:0 auto 28px;line-height:1.65;}
+.founder-cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--orange);color:white;padding:14px 30px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;transition:background 0.2s,transform 0.15s;display:inline-block;}
+.btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--text-dark);padding:14px 30px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;border:1.5px solid var(--border);transition:border-color 0.2s,color 0.2s,transform 0.15s;display:inline-block;}
+.btn-secondary:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--text-dark);padding:40px 5vw 24px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:20px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:white;letter-spacing:-0.5px;}
+.footer-logo span{color:var(--orange);}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,0.5);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.hero-back,.hero-eyebrow,.hero h1,.hero-tagline{animation:fadeUp 0.55s ease both;}
+.hero-eyebrow{animation-delay:0.05s;}
+.hero h1{animation-delay:0.1s;}
+.hero-tagline{animation-delay:0.18s;}
+
+/* MOBILE */
+@media(max-width:900px){
+  .founder-grid{grid-template-columns:1fr;gap:36px;}
+  .founder-photo-col{position:static;max-width:340px;margin:0 auto;}
+}
+@media(max-width:700px){
+  .nav-links a:not(.btn-nav){display:none;}
+  .hero{padding:36px 5vw 20px;}
+  .founder-section{padding:30px 5vw 60px;}
+  .founder-pullquote{padding:20px;margin:24px 0;}
+  .founder-pullquote p{font-size:18px;}
+  .founder-vision{padding:24px;}
+  .founder-cta-btns{flex-direction:column;}
+  .founder-cta-btns>*{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">Go<span>Mentored</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#mentors">Mentors</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#mission">Mission</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#contact">Contact Us</a></li>
+    <li><a href="index.html#mentors" class="btn-nav">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circle hbc1"></div>
+  <div class="hero-bg-circle hbc2"></div>
+  <div class="hero-inner">
+    <a href="index.html" class="hero-back">← Back to home</a>
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>About the Founder</div>
+    <h1>The story behind<br><em>GoMentored</em></h1>
+    <p class="hero-tagline">Built on a simple belief: no matter where you are in your career, the right mentor at the right moment can change everything.</p>
+  </div>
+</section>
+
+<!-- FOUNDER STORY -->
+<section class="founder-section">
+  <div class="founder-inner">
+    <div class="founder-grid">
+
+      <!-- PHOTO COLUMN -->
+      <div class="founder-photo-col">
+        <div class="founder-photo-wrap">
+          <!-- 
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            📸 ADD YOUR PHOTO HERE
+            Replace the placeholder below with: 
+            <img src="hassan.jpg" alt="Hassan Asif" class="founder-photo" />
+            
+            Just save your photo as "hassan.jpg" in the same folder
+            as this HTML file. Then update the filename above.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          -->
+          <img src="hassan.jpeg" alt="Hassan Asif" class="founder-photo" /> 
+
+          <div class="founder-name-tag">
+            <div class="fnt-name">Hassan Asif</div>
+            <div class="fnt-role">Founder &amp; CEO · GoMentored</div>
+          </div>
+        </div>
+
+        <div class="founder-meta">
+          <div class="founder-meta-label">Background</div>
+          <ul class="founder-meta-list">
+            <li><strong>Education:</strong> MSc International Financial Management, Queen Mary University of London</li>
+            <li><strong>Industry:</strong> Finance</li>
+            <li><strong>Based in:</strong> Lahore, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TEXT COLUMN -->
+      <div class="founder-text-col">
+        <div class="founder-eyebrow">A Founder's Story</div>
+        <h2 class="founder-title">Every career has a ceiling.<br><em>The right mentor lifts it.</em></h2>
+
+        <p class="founder-highlight">GoMentored was founded by <strong>Muhammad Hassan Asif</strong> with a single mission: to ensure no professional — at any stage of their journey — has to navigate their career alone.</p>
+
+        <p>Whether you're just starting out, switching industries, climbing toward senior leadership, or making a move across borders, the truth is the same at every stage: <strong>the right guidance, at the right moment, changes everything.</strong></p>
+
+        <p>Hassan built his finance career from the ground up after returning to Pakistan with a Master's in International Financial Management from Queen Mary University of London. On paper, the credentials were strong. In reality, the path forward was anything but clear.</p>
+
+        <p>Like many ambitious professionals, he learned the hard way that a degree opens doors — but doesn't tell you which one to walk through. Without a mentor to turn to, he navigated his career through trial and error, second-guessing decisions, questioning every move.</p>
+
+        <p>And that's where the real cost of going alone showed itself.</p>
+
+        <p><strong>Not having a mentor creates uncertainty. Uncertainty breeds anxiety. Anxiety turns into self-criticism. And over time, it quietly erodes your mental health</strong> — leaving you to question your worth, your pace, and your direction, even when you're doing the right things.</p>
+
+        <div class="founder-pullquote">
+          <p>"Having the right mentor is essential. Someone who maps your career out with you, guides you from their own lived experience, and reminds you that the road you're walking has been walked before."</p>
+        </div>
+
+        <p>That realisation became GoMentored.</p>
+
+        <p>Hassan saw, firsthand, how a well-timed conversation with the right mentor can compress years of trial and error into months of focused growth — and replace doubt with direction. He launched GoMentored to make that conversation accessible to everyone: from students mapping their first move, to mid-career professionals plotting their next leap, to senior leaders refining their final mile.</p>
+
+        <p>Every mentor on the platform is carefully selected — practitioners currently working in their fields across analytics, finance, medicine, and tech sales, in cities like New York, London, and Dubai.</p>
+
+        <p><strong>Because no matter where you are in your career, there's always a next goal, a next role, a next chapter.</strong> And there's always someone who has already lived it — ready to help you get there faster, with more clarity, and without the weight of figuring it all out alone.</p>
+
+        <div class="founder-vision">
+          <div class="founder-vision-label">Our Vision</div>
+          <h3>Every professional deserves a guide for <em>their next chapter</em>.</h3>
+          <p>From your first job to your last role, GoMentored connects you with someone who has walked the path you're stepping onto. Because the right mentor doesn't just accelerate your career — they protect your peace, restore your confidence, and redefine what's possible.</p>
+        </div>
+
+        <div class="founder-signature">
+          <div class="sig-name">Hassan Asif</div>
+          <div class="sig-role">Founder &amp; CEO, GoMentored</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="founder-cta">
+  <div class="founder-cta-inner">
+    <h2>Ready to find <em>your mentor</em>?</h2>
+    <p>Browse our handpicked mentors across analytics, finance, medicine, and tech sales — all working in the exact roles you're aiming for.</p>
+    <div class="founder-cta-btns">
+      <a href="index.html#mentors" class="btn-primary">Find a Mentor</a>
+      <a href="index.html#mission" class="btn-secondary">Learn How It Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Go<span>Mentored</span></div>
+        <div class="footer-tagline">Connecting ambition with experience, one session at a time.</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 GoMentored. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
